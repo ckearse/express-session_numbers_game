@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
   </head>
   <body>
-    <form action="/" method="POST">
+    <form action="/reset" method="POST">
       <div align="center">
         <h1>Welcome to the Great Number Game!</h1>
 
@@ -13,11 +13,11 @@
 
         <div class="result_div win_result_div">
           <h1 class="result_message"><%= result.guess %> was the number!</h1>
+
+          <input type="submit" value="Play again">
+          
         </div>
 
-        <input type="number" name="guessed_number">
-
-        <input type="submit" value="Submit">
       </div>
     </form>
   </body>

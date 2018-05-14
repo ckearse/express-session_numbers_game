@@ -13,6 +13,7 @@
   width: 15rem;
   height: 15rem;
   margin: 15px;
+  vertical-align: middle;
 }
 
 input{
@@ -21,6 +22,6 @@ input{
 }
 
 .result_message{
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 75px;
+  margin-bottom: 25px;
 }

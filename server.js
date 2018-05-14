@@ -3,6 +3,7 @@ const app = express();
 const parser = require('body-parser');
 
 var session = require('express-session');
+session.number = 0;
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
@@ -11,11 +12,18 @@ app.use(express.static(__dirname + '/static'));
 
 app.use(parser.urlencoded({extended: true}));
 
+var random_num;
+
 app.post('/', function(req, res){
-  var random_num = 10 * Math.random();
-  if(random_num === 0) random_num +=1;
+
+  if(session.number === 0){
+    random_num = Math.floor(100 * Math.random());
+    if(random_num === 0) random_num +=1;
+  }
   
   session.number = req.body.guessed_number;
+
+  console.log(random_num);
 
   var result = {
     guess: session.number,
@@ -33,6 +41,12 @@ app.post('/', function(req, res){
     res.render('loss', {'result': result});
   }
 
+});
+
+app.post('/reset', function(req, res){
+  session.number = 0;
+
+  res.redirect('/');
 });
 
 app.listen(7777, function(){
