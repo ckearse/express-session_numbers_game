@@ -1,0 +1,26 @@
+.win_result_div{
+  background-color: green;
+  color: white;
+}
+
+.lose_result_div{
+  background-color: red;
+  color: white;
+}
+
+.result_div{
+  border: solid black;
+  width: 15rem;
+  height: 15rem;
+  margin: 15px;
+}
+
+input{
+  display: block;
+  margin-bottom: 10px;
+}
+
+.result_message{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
